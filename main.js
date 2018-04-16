@@ -6,6 +6,7 @@ $(document).ready(function(){
     }
 
     $(document).on('click', '.cell', function(){
+        var thisCell=$(this);
         $.ajax({
             url: "https://www.boolean.careers/api/random/int",
             method: "GET",
@@ -14,13 +15,13 @@ $(document).ready(function(){
 
                 if((cpuNumber!=0)&&(cpuNumber<=5)){
                     console.log("il numero del pc è", + cpuNumber );
-                    $(this).css('background', 'yellow')
-                    $(this).text(cpuNumber);
+                    thisCell.css('background', 'yellow');
+                    thisCell.text(cpuNumber);
                 }
-                else if((cpuNumber!=0)&&(cpuNumber>=5)){
+                else if((cpuNumber!=0)&&(cpuNumber>5)){
                     console.log("il numero del pc è", + cpuNumber );
-                    $(this).css('background', 'green');
-                    $(this).text(cpuNumber)
+                    thisCell.css('background', 'green');
+                    thisCell.text(cpuNumber)
                 }
               },
               error:function(){
