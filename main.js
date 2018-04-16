@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var cpuNumber=0;
+    var cpuNumber=0;
 
     for(var i=0;i<36;i++){
         $('.container').append( "<div id=" + i + " class=cell></div>");
